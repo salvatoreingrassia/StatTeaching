@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App di simulazione statistica</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --card: #ffffff;
+      --text: #1f2933;
+      --muted: #5f6b7a;
+      --accent: #1d5fa8;
+      --border: #e2e6ea;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header {
+      background: var(--accent);
+      color: #fff;
+      padding: 2.5rem 1.5rem 2rem;
+    }
+    header .wrap, main, footer { max-width: 1000px; margin: 0 auto; }
+    header h1 { margin: 0 0 .4rem; font-size: 1.9rem; }
+    header p { margin: 0; opacity: .9; }
+    nav {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 10;
+    }
+    nav ul {
+      list-style: none; margin: 0 auto; padding: 0 1.5rem;
+      max-width: 1000px; display: flex; flex-wrap: wrap; gap: .25rem;
+    }
+    nav a {
+      display: block; padding: .8rem .9rem;
+      color: var(--text); text-decoration: none; font-weight: 500;
+      border-bottom: 3px solid transparent;
+    }
+    nav a:hover { border-bottom-color: var(--accent); color: var(--accent); }
+    main { padding: 2rem 1.5rem; }
+    section { margin-bottom: 2.5rem; scroll-margin-top: 4rem; }
+    section h2 {
+      font-size: 1.25rem; margin: 0 0 1rem;
+      padding-bottom: .4rem; border-bottom: 2px solid var(--border);
+    }
+    .grid {
+      display: grid; gap: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.2rem;
+      display: flex; flex-direction: column;
+      transition: box-shadow .15s, transform .15s;
+    }
+    .card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.08); transform: translateY(-2px); }
+    .card h3 { margin: 0 0 .4rem; font-size: 1.05rem; }
+    .card p { margin: 0 0 1rem; color: var(--muted); font-size: .93rem; flex: 1; }
+    .card a.btn {
+      align-self: flex-start;
+      background: var(--accent); color: #fff; text-decoration: none;
+      padding: .45rem .9rem; border-radius: 6px; font-size: .9rem; font-weight: 500;
+    }
+    .card a.btn:hover { background: #164a84; }
+    .note {
+      background: #fff8e1; border: 1px solid #f3df9b; border-radius: 8px;
+      padding: .8rem 1rem; font-size: .9rem; color: #6b5800; margin-bottom: 2rem;
+    }
+    footer { padding: 1.5rem; color: var(--muted); font-size: .85rem; text-align: center; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <h1>App di simulazione statistica</h1>
+      <p>Applicazioni interattive per il corso di Statistica</p>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#descrittiva">Statistica descrittiva</a></li>
+      <li><a href="#intervalli">Intervalli di confidenza</a></li>
+      <li><a href="#test">Test d'ipotesi</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <div class="note">
+      Le app girano direttamente nel browser: al primo avvio possono servire alcuni secondi per il caricamento.
+    </div>
+
+    <!-- ===== SEZIONE 1 ===== -->
+    <section id="descrittiva">
+      <h2>Statistica descrittiva</h2>
+      <div class="grid">
+
+        <div class="card">
+          <h3>Media, mediana e moda</h3>
+          <p>Come cambiano gli indici di posizione modificando i valori della distribuzione.</p>
+          <a class="btn" href="media-mediana-moda/" target="_blank">Apri l'app</a>
+        </div>
+
+        <div class="card">
+          <h3>Correlazione</h3>
+          <p>Diagrammi di dispersione e coefficiente di correlazione.</p>
+          <a class="btn" href="correlation/" target="_blank">Apri l'app</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== SEZIONE 2 ===== -->
+    <section id="intervalli">
+      <h2>Intervalli di confidenza</h2>
+      <div class="grid">
+
+        <div class="card">
+          <h3>Intervalli di confidenza</h3>
+          <p>Simulazione di intervalli per la media (varianza incognita), la varianza e la proporzione, al variare di n.</p>
+          <a class="btn" href="intervalli-confidenza/" target="_blank">Apri l'app</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== SEZIONE 3 ===== -->
+    <section id="test">
+      <h2>Test d'ipotesi</h2>
+      <div class="grid">
+
+        <div class="card">
+          <h3>Test d'ipotesi</h3>
+          <p>Test z e t sulla media, test per grandi campioni (TLC), test sulla varianza e sulla proporzione, al variare di n.</p>
+          <a class="btn" href="test-ipotesi/" target="_blank">Apri l'app</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Università degli Studi di Catania
+  </footer>
+
+</body>
+</html>
